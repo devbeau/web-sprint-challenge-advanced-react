@@ -30,13 +30,32 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+State in class components goes into the constructor such as:
+constructor(){
+    super();
+    this.state = {mystate: ''}
+}
+
 2. Describe the different phases of the component lifecycle.
+
+Mounting - component first is assigned to the page.
+Updating - component has some stateful change that causes a rerender.
+Unmounting - component is removed.
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+componentDidMount - Applies side-effect logic on the initial render of the component.
+componentDidUpdate - Applies side-effect logic every time a component's state updates.
+componentDidDismount- Usually used for clean-up after a component is removed from the page.
+
 4. Define stateful logic.
 
+Stateful logic is the logic involving state that doesn't involve the visual representation of the state.
+
 5. Describe how to test a React component with React Testing Library.
+
+Use the basic arrange, act, assert process to get the components, perform actions on them, and test their behavior according
+to testing guidelines.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -54,32 +73,32 @@ _Please follow the setup instructions closely so that you can get everything up 
 
 **Basic set up**
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Create a forked copy of this project
+- [x] add your team lead as collaborator on Github
+- [x] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
 
 **Starting the server**
 
-- [ ] Run `npm install` to download dependencies for the server.
-- [ ] Run the server using `npm start`.
-- [ ] Open a new browser tab and navigate to `http://localhost:3333/plants` - if you see a JSON object with plants data, then you know the server is running 👍
+- [x] Run `npm install` to download dependencies for the server.
+- [x] Run the server using `npm start`.
+- [x] Open a new browser tab and navigate to `http://localhost:3333/plants` - if you see a JSON object with plants data, then you know the server is running 👍
 
 **Starting the React app**
 
-- [ ] In a separate terminal cd into the `client` folder and run `npm install` to download dependencies.
-- [ ] Still inside the `client` folder run `npm run start` to run the client application.
-- [ ] Your browser should open up the project as normal
+- [x] In a separate terminal cd into the `client` folder and run `npm install` to download dependencies.
+- [x] Still inside the `client` folder run `npm run start` to run the client application.
+- [x] Your browser should open up the project as normal
 
 **Starting your test runner**
 
-- [ ] In the final terminal window, make sure you are in the `client` folder still
-- [ ] Start the test runner with `npm test` (I recommend doing this only when you're testing - any change in your app will make the tests run, and that could eat up your computer power)
+- [x] In the final terminal window, make sure you are in the `client` folder still
+- [x] Start the test runner with `npm test` (I recommend doing this only when you're testing - any change in your app will make the tests run, and that could eat up your computer power)
 
 **Commit and Push OFTEN!**
 
-- [ ] Implement the project on this Branch, **committing progress & changes often.**
-- [ ] Push commits: `git push origin <firstName-lastName>`.
+- [x] Implement the project on this Branch, **committing progress & changes often.**
+- [x] Push commits: `git push origin <firstName-lastName>`.
 
 ### Task 2: Project Requirements
 
@@ -89,9 +108,9 @@ Your finished project must include all of the following requirements:
 
 Display a list of the plants from the server. This should be done in the class component `PlantList`.
 
-- [ ] In the `PlantList` class component, fetch data from the server you now have running - the data can be fetched from `http://localhost:3333/plants`
-- [ ] Set the data to a state property called `this.state.plants`
-- [ ] The render function is already built and styled. Once the data is on the state, you will see the list of plants, and you will have the functionality to add a plant to the cart
+- [x] In the `PlantList` class component, fetch data from the server you now have running - the data can be fetched from `http://localhost:3333/plants`
+- [x] Set the data to a state property called `this.state.plants`
+- [x] The render function is already built and styled. Once the data is on the state, you will see the list of plants, and you will have the functionality to add a plant to the cart
 
 #### Shopping Cart
 
@@ -101,14 +120,14 @@ Nothing needs to be done here. You _will_ have to navigate to the cart page in y
 
 The form is working, but it is currently controlled by local stateful logic. We want to control this form with a custom hook.
 
-- [ ] Build a custom hook called `useForm`, and use it in your CheckoutForm component to control the form's stateful logic
+- [x] Build a custom hook called `useForm`, and use it in your CheckoutForm component to control the form's stateful logic
 
 _Note: You built a useForm hook in the guided project this week. You will probably need to use that as a guide to complete this step. However, try and build it out first before you peek at the guided project. And *do not* copy/paste directly from the guided project!_
 
 #### Testing the Checkout Form
 
-- [ ] Build out the tests listed in `CheckoutForm.test.js`. You will need to make sure they are testing what the test title implies they are testing
-- [ ] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working
+- [x] Build out the tests listed in `CheckoutForm.test.js`. You will need to make sure they are testing what the test title implies they are testing
+- [x] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working
 
 <hr/>
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
@@ -117,7 +136,7 @@ In your solution, it is essential that you follow best practices and produce cle
 
 After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
 
-- [ ] Add a filter input to the plant list page.
+- [x] Add a filter input to the plant list page.
 - [ ] Build and implement another custom hook - a dark mode hook would be great for this project, though you'll have to style the light theme ☀️ 🌙
 - [ ] Add a test file for the `ShoppingCart` component and test that it displays plants there (you'll need some mock plant data for the test, and then you can pass that data in as a prop when you call `render` and render the component - see the example below)
 
@@ -135,6 +154,6 @@ test("displays plants in cart", () => {
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo). **Please don't merge your own pull request**
-- [ ] Add your team lead as a reviewer on the pull-request
-- [ ] Your team lead will count the project as complete after receiving your pull-request
+- [x] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo). **Please don't merge your own pull request**
+- [x] Add your team lead as a reviewer on the pull-request
+- [x] Your team lead will count the project as complete after receiving your pull-request
